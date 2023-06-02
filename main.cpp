@@ -6,24 +6,52 @@ using namespace std;
 
 
 //A lo largo del fin de semana se irán trabajando con más detalles del código.
-
 int main(){
-    
+    int opsel;    
     //Pruebas
+    cout<<"Bienvenido a TECLEX"<<endl;
+    cout<<"Este es un listado de nuestros servicios, selecciona el que desees"<<endl;
+    cout<<"1 - Interfaz principal"<<endl;
+    cout<<"2 - Compra de accesorios"<<endl;
+    cout<<"3 - Centro de personalizado"<<endl;
+    cout<<"4 - Centro de reparado"<<endl;
+    cout<<"5 - Mejora de dispositivos"<<endl;
+    cin>>opsel;
 
-    accesorios accesorios1;
-    accesorios1.aniadir_carrito(127892);
-
-    reparado reparado1;
-    reparado1.agendar_cita(true);
-    reparado1.aniadir_carrito(12312,"cambio de pilas", true);
-
-    personalizado per1;
-    per1.agendar_cita(true);
-    per1.aniadir_carrito(431219);
-
-    mejora mej1;
-    mej1.agendar_cita(true);
-    mej1.aniadir_carrito("mejora de ram");
+    if (opsel == 1) {
+        cout<<"El interfaz sigue en proceso ..."<<endl;
+    }
+    else if (opsel == 2) {
+        cout<<"Bienvenido a la sección de accesorios"<<endl;
+        // Esta fue la manera en la que se me ocurrió implemental el polimorfismo
+        // No obstante se aceptan otras sugerencias
+        interfaz* accesorios1 = new accesorios;
+        accesorios1 -> aniadir_carrito(127892);
+        accesorios1 -> aniadir_carrito(184082);
+        accesorios1 -> aniadir_carrito(109309);
+        delete accesorios1;
+    }
+    else if (opsel == 3) {
+        cout<<"Este es el centro de personalizado"<<endl;
+        reparado reparado1;
+        reparado1.agendar_cita(true);
+        reparado1.aniadir_carrito(12312,"cambio de pilas", true);
+    }
+    else if (opsel == 4) {
+        cout<<"Bienvenido al centro de reparado"<<endl;
+        personalizado per1;
+        per1.agendar_cita(true);
+        interfaz* person1 = new personalizado;
+        person1 -> aniadir_carrito(127892);
+        person1 -> aniadir_carrito(184082);
+        person1 -> aniadir_carrito(109309);
+        delete person1;
+    }
+    else if (opsel == 5) {
+        cout<<"Este es el centro de mejora de dispositivos"<<endl;
+        mejora mej1;
+        mej1.agendar_cita(true);
+        mej1.aniadir_carrito("Mejora de RAM");
+    }
 
 }
