@@ -14,10 +14,10 @@ class interfaz
 {
     public:
         // // La función agendar cita va a ser usada en sobrecarga
-        void aniadir_carrito(int id_accesorio) {
+        virtual void aniadir_carrito(int id_accesorio) {
         }
         // La función agendar cita va a ser usada en sobreescritura
-        string agendar_cita(bool cita) {
+        virtual void agendar_cita(bool cita) {
         }
         
 };
@@ -48,10 +48,10 @@ private:
     int id_per;
 
 public:
-    void aniadir_carrito(int id_per){
+    void aniadir_carrito(int id_per) {
         cout<<"Tu id de personalizado es: "<<id_per<<endl;
     }
-    void agendar_cita(bool cita){
+    void agendar_cita(bool cita) {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
@@ -72,7 +72,7 @@ private:
     int id_rep;
 
 public:
-    void aniadir_carrito(int id_rep, string tipo_rep, bool ida_sucursal){
+    void aniadir_carrito(int id_rep, string tipo_rep, bool ida_sucursal) {
         cout<<"El id de la mejora que vas a adquirir es: "<<id_rep<<endl;
         cout<<"El tipo de mejora es: "<<tipo_rep<<endl;
         if (ida_sucursal == true){
@@ -83,7 +83,7 @@ public:
         }      
     }
 
-    void agendar_cita(bool cita){
+    void agendar_cita(bool cita) {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
@@ -103,11 +103,11 @@ private:
     bool posibilidad_mej;
 
 public:
-    void aniadir_carrito(string tipo_mej){
+    void aniadir_carrito(string tipo_mej) {
         cout<<"Tu tipo de mejora es: "<<tipo_mej<<endl;
     }
 
-    void agendar_cita(bool cita){
+    void agendar_cita(bool cita) {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
