@@ -14,11 +14,10 @@ class interfaz
 {
     public:
         // // La función agendar cita va a ser usada en sobrecarga
-        virtual void aniadir_carrito(int id_accesorio) {
+        void aniadir_carrito(int id_accesorios){
         }
         // La función agendar cita va a ser usada en sobreescritura
-        virtual void agendar_cita(bool cita) {
-        }
+        virtual void agendar_cita(bool cita) = 0;
         
 };
 
@@ -31,7 +30,7 @@ private:
     int id_accesorios;
 
 public:
-    void aniadir_carrito(int id_accesorios){
+    void aniadir_carrito(int id_accesorios) {
         cout<<"El id del accesorio a comprar es: "<<id_accesorios<<endl;
     }
 };
@@ -51,7 +50,7 @@ public:
     void aniadir_carrito(int id_per) {
         cout<<"Tu id de personalizado es: "<<id_per<<endl;
     }
-    void agendar_cita(bool cita) {
+    void agendar_cita(bool cita) override {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
@@ -83,7 +82,7 @@ public:
         }      
     }
 
-    void agendar_cita(bool cita) {
+    void agendar_cita(bool cita) override {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
@@ -107,7 +106,7 @@ public:
         cout<<"Tu tipo de mejora es: "<<tipo_mej<<endl;
     }
 
-    void agendar_cita(bool cita) {
+    void agendar_cita(bool cita) override {
         if (cita == true){
             cout<<"¿Cuándo quieres agendar tu cita (sólo números)?: ";
             cin>>fecha;
