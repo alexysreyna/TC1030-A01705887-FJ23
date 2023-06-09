@@ -10,6 +10,7 @@ int main(){
     int opsel;    
     //Pruebas
     cout<<"Bienvenido a TECLEX"<<endl;
+    cout<<"Se le informa a los usuarios que el carrito de compras sigue en proceso"<<endl;
     cout<<"Este es un listado de nuestros servicios, selecciona el que desees"<<endl;
     cout<<"1 - Interfaz principal"<<endl;
     cout<<"2 - Compra de accesorios"<<endl;
@@ -23,13 +24,7 @@ int main(){
     }
     else if (opsel == 2) {
         cout<<"Bienvenido a la sección de accesorios"<<endl;
-        // Esta fue la manera en la que se me ocurrió implemental el polimorfismo
-        // No obstante se aceptan otras sugerencias
-        interfaz* accesorios1 = new accesorios;
-        accesorios1 -> aniadir_carrito(127892);
-        accesorios1 -> aniadir_carrito(184082);
-        accesorios1 -> aniadir_carrito(109309);
-        delete accesorios1;
+        cout<<"Se está trabajando en está sección"<<endl;
     }
     else if (opsel == 3) {
         cout<<"Este es el centro de personalizado"<<endl;
@@ -41,6 +36,8 @@ int main(){
         cout<<"Bienvenido al centro de reparado"<<endl;
         personalizado per1;
         per1.agendar_cita(true);
+        // Esta fue la manera en la que se me ocurrió implementar el polimorfismo
+        // No obstante se aceptan otras sugerencias
         interfaz* person1 = new personalizado;
         person1 -> aniadir_carrito(127892);
         person1 -> aniadir_carrito(184082);
@@ -53,5 +50,7 @@ int main(){
         mej1.agendar_cita(true);
         mej1.aniadir_carrito("Mejora de RAM");
     }
+
+    return 0;
 
 }
